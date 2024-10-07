@@ -2,56 +2,44 @@ package Giocatore;
 
 public class Giocatore {
 
-    // Inizializzazione
     private String nome;
-    private boolean capitano;
-    private int goal;
-
-    // Costruttore vuoto
-    public Giocatore() {
-    }
-
-    // Atributi
-    public Giocatore(String nome, boolean capitano, int goal) {
+    private Boolean capitano;
+    private int goals;
+    public Giocatore (String nome, Boolean capitano, int goals) {
         setNome(nome);
         setCapitano(capitano);
-        setGoal(goal);
+        setGoals(goals);
     }
-
-    // Giocatore
-    public Giocatore(String nome) {
+    public Giocatore (String nome, Boolean capitano) {
+        setNome(nome);
+        setCapitano(capitano);
+        setGoals(0);
+    }
+    public Giocatore (String nome) {
         setNome(nome);
         setCapitano(false);
-        setGoal(0);
+        setGoals(0);
     }
-
-    // Metodi get
     public String getNome() {
         return nome;
     }
-
-    public boolean isCapitano() {
-        return capitano;
-    }
-
-    public int getGoal() {
-        return goal;
-    }
-
-    // Metodi set
-    public void setNome(String nuovoNome) {
-        if (nuovoNome != null && !nuovoNome.trim().isEmpty()) {
-            nome = nuovoNome;
+    public String getCapitano() {
+        if (capitano) {
+            return "E' il Capitano";
+        } else {
+            return "Non capitano";
         }
     }
-
-    public void setCapitano(boolean nuovoCapitano) {
-        capitano = nuovoCapitano;
+    public int getGoals() {
+        return goals;
     }
-
-    public void setGoal(int nuoviGoal) {
-        if (nuoviGoal >= 0) {
-            goal = nuoviGoal;
-        }
+    public void setNome(String nomee) {
+        nome = nomee;
+    }
+    public void setCapitano(Boolean capitanoo) {
+        capitano = capitanoo;
+    }
+    public void setGoals(int goalss) {
+        goals = goalss;
     }
 }
